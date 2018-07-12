@@ -1,4 +1,3 @@
-require 'pry'
 require_relative '../../config/environment'
 
 class ApplicationController < Sinatra::Base
@@ -25,7 +24,6 @@ class ApplicationController < Sinatra::Base
   get '/posts/:id' do
     id = params["id"].to_i
     @post = Post.find_by(id: id)
-    binding.pry
     erb :show
   end
 
